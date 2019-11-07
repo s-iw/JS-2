@@ -93,12 +93,14 @@
       console.log('Проверьте данные')
     }
   }
+  
   function checkInfo() {
     let a = checkName();
     let b = checkTel();
     let c = checkEmail();
     return a && b && c;
   }
+
   function checkName() {
     const name = document.querySelector('#name');
     const regExpName = /^[А-ЯA-Z][а-яa-z]*$/; //предполагается, что имя может состоять из одной обязательно заглавной буквы.
@@ -108,6 +110,7 @@
       name.classList.add('wrong');
     return regExpName.test(name.value);
   }
+
   function checkTel() {
     const tel = document.querySelector('#tel');
     const regExpTel = /^\+\d\(\d{3}\)\d{3}-\d{4}$/; //+7(000)000-0000
@@ -117,6 +120,7 @@
       tel.classList.add('wrong');
     return regExpTel.test(tel.value);
   }
+
   function checkEmail() {
     const email = document.querySelector('#email');
     const regExpEmail = /^[a-z]+[.-]?[a-z]+@[a-z]+\.[a-z]{2,3}$/i; //min имя - 2 буквы, '.' или '-' строго внутри имени
