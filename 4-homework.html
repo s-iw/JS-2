@@ -13,16 +13,14 @@
       margin: 10px 0 5px;
     }
     input {
-      min-width: 250px;
+      width: 250px;
       padding: 2px 5px;
       border: 1px solid #999;
-    }
-    input {
-    outline: none;
+      outline: none;
     }
     textarea {
-      min-width: 250px;
-      max-width: 250px;
+      width: 250px;
+      resize: vertical;
       min-height: 100px;
       padding: 5px;
     }
@@ -93,38 +91,48 @@
       console.log('Проверьте данные')
     }
   }
+
   function checkInfo() {
     let a = checkName();
     let b = checkTel();
     let c = checkEmail();
     return a && b && c;
   }
+
   function checkName() {
     const name = document.querySelector('#name');
     const regExpName = /^[А-ЯA-Z][а-яa-z]*$/; //предполагается, что имя может состоять из одной обязательно заглавной буквы.
-    if (regExpName.test(name.value))
+    if (regExpName.test(name.value)) {
       name.classList.remove('wrong');
-    else
+      return true;
+    } else {
       name.classList.add('wrong');
-    return regExpName.test(name.value);
+      return false;
+    }
   }
+
   function checkTel() {
     const tel = document.querySelector('#tel');
     const regExpTel = /^\+\d\(\d{3}\)\d{3}-\d{4}$/; //+7(000)000-0000
-    if (regExpTel.test(tel.value))
+    if (regExpTel.test(tel.value)) {
       tel.classList.remove('wrong');
-    else
+      return true;
+    } else {
       tel.classList.add('wrong');
-    return regExpTel.test(tel.value);
+      return false;
+    }
   }
+
   function checkEmail() {
     const email = document.querySelector('#email');
     const regExpEmail = /^[a-z]+[.-]?[a-z]+@[a-z]+\.[a-z]{2,3}$/i; //min имя - 2 буквы, '.' или '-' строго внутри имени
-    if (regExpEmail.test(email.value))
+    if (regExpEmail.test(email.value)) {
       email.classList.remove('wrong');
-    else
+      return true;
+    } else {
       email.classList.add('wrong');
-    return regExpEmail.test(email.value);
+      return false;
+    }
   }
 
   //a
