@@ -33,23 +33,21 @@
   </style>
 </head>
 <body>
-<form action="#">
-  <fieldset>
-    <label for="name">Имя:<em>*</em></label>
-    <input type="text" id="name" placeholder="Иван">
+<fieldset>
+  <label for="name">Имя:<em>*</em></label>
+  <input type="text" id="name" placeholder="Иван">
 
-    <label for="tel">Телефон:<em>*</em></label>
-    <input type="text" id="tel" placeholder="+7(000)000-0000">
+  <label for="tel">Телефон:<em>*</em></label>
+  <input type="text" id="tel" placeholder="+7(000)000-0000">
 
-    <label for="email">Email:<em>*</em></label>
-    <input type="text" id="email" placeholder="my-mail@mail.ru">
+  <label for="email">Email:<em>*</em></label>
+  <input type="text" id="email" placeholder="my-mail@mail.ru">
 
-    <label for="text">Текст:</label>
-    <textarea id="text"></textarea>
+  <label for="text">Текст:</label>
+  <textarea id="text"></textarea>
 
-    <button id="sendInfo">Отправить</button>
-  </fieldset>
-</form>
+  <button id="sendInfo">Отправить</button>
+</fieldset>
 <script>
 
   const text = `
@@ -75,7 +73,7 @@
   console.log(text.replace((/\'/g), `"`));
 
   //task2
-  console.log(text.replace((/\B\'|\'\B/g), `"`)); // `\'\B` меняет кавычку в одном месте => `...store'`
+  console.log(text.replace((/\B\'|\'\B/g), `"`)); // `\'\B` требуется, чтобы заменить кавычку в `...store'`
 
   //task3
   document.querySelector('#sendInfo').addEventListener('click', sendInfo);
