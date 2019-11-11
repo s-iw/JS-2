@@ -13,14 +13,13 @@ const app = new Vue({
     searchLine: '',
     isVisibleCart: false,
   },
-
   methods: {
     getJson(url){
       return fetch(url)
         .then(result => result.json())
         .catch(error => {
           console.log(error);
-        })
+        }),
     },
 
     filterGoods() {
@@ -33,7 +32,7 @@ const app = new Vue({
         } else {
           block.classList.remove('invisible');
         }
-      })
+      });
     },
 
     addProduct(product){
@@ -70,8 +69,8 @@ const app = new Vue({
         });
       // console.log(this.cart);
     },
-
   },
+  
   mounted(){
     this.getJson(`${API + this.catalogUrl}`)
       .then(data => {
@@ -86,5 +85,5 @@ const app = new Vue({
           this.cart.push(el);
         }
       });
-  }
+  },
 });
