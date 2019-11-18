@@ -12,11 +12,9 @@ button:focus{
     outline: none;
 }
 .logo{
+
     text-transform: uppercase;
     font-weight: bold;
-}
-.btn-search {
-    cursor: pointer;
 }
 .btn-cart{
     background-color: #fafafa;
@@ -34,16 +32,6 @@ button:focus{
 }
 .btn-cart, .logo{
     align-self: center;
-}
-/*.products {*/
-/*display: flex;*/
-/*justify-content: space-between;*/
-/*flex-wrap: wrap;*/
-/*padding: 40px 80px;*/
-/*}*/
-.empty {
-    width: fit-content;
-    margin: 100px auto 0;
 }
 .products{
     column-gap: 30px;
@@ -73,6 +61,7 @@ img {
     padding: 15px
 }
 .cart{
+    display: flex;
     position: relative;
 }
 .cart-block{
@@ -102,7 +91,8 @@ img {
     border-right: 10px solid transparent;
     border-bottom: 10px solid white;
 }
-.buy-btn, .del-btn, .add-btn {
+
+.buy-btn, .del-btn{
     margin-top: 5px;
     background-color: #2f2a2d;
     padding: 5px 15px;
@@ -112,10 +102,7 @@ img {
     transition: all ease-in-out .4s;
     cursor: pointer;
 }
-.del-btn, .add-btn {
-    width: 40px;
-}
-.buy-btn:hover, .del-btn:hover, .add-btn:hover {
+.buy-btn:hover, .del-btn:hover{
     background-color: #fafafa;
     color: #2f2a2d;
     border: 1px solid #2f2a2d;
@@ -173,7 +160,6 @@ img {
     width: 200px;
     color: #fafafa;
     padding: 10px;
-    padding-right: 35px;
     background-color: transparent;
     border: none;
     border-bottom: 2px solid #fafafa;

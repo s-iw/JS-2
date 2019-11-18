@@ -11,9 +11,9 @@
     <header>
         <div class="logo">E-shop</div>
         <div class="cart">
-            <form action="#" class="search-form">
+            <form @submit.prevent action="#" class="search-form">
                 <input type="text" class="search-field" v-model="searchLine">
-                <button @click="filterGoods()" class="btn-search" type="submit">
+                <button @click="filterGoods" class="btn-search" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
@@ -32,16 +32,16 @@
                     <div class="right-block">
                         <p class="product-price">{{item.quantity * item.price}} ₽</p>
                         <button class="add-btn" @click="addProduct(item)" :data-id="item.id_product">+</button><br>
-                        <button class="del-btn" @click="removeProduct(item)" :data-id="item.id_product">-</button>
+                        <button class="del-btn" @click="removeProduct(item)" :data-id="item.id_product"><b>-</b></button>
                     </div>
                 </div>
             </div>
         </div>
     </header>
     <main>
-        <div v-if="!products.length" class="empty">Нет данных</div>
+        <div v-if="!filtered.length" class="empty">Нет данных</div>
         <div v-else class="products">
-            <div class="product-item" v-for="product of products" :key="product.id_product" :data-id="product.id_product">
+            <div class="product-item" v-for="product of filtered" :key="product.id_product" :data-id="product.id_product">
                 <img :src="imgCatalog" alt="Some img">
                 <div class="desc">
                     <h3>{{product.product_name}}</h3>
